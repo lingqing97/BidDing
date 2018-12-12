@@ -1,0 +1,16 @@
+{% extends 'home_base.html' %}
+{% block details %}
+{% for msg in messages %}
+<div class="alert alert-{{msg.tags}}" align="center">
+    {{msg}}
+</div>
+{% endfor %}
+<div class="panel panel-default" >
+    <div class="panel-body text-center">
+        <strong>BidDing Web</strong>
+    </div>
+</div>
+{% if not messages %}
+<h1 class="text-center" style="font-size="><em>您还未登录</em></h1>
+{% endif %}
+{% endblock %}

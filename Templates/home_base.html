@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <meta charset="UTF-8" />
+    <style>h1,h2,h3,h4,h5,p,div{font-family:Arial;}</style>
+    </head>
+    <body>
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">BidDing Web</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="/login">登录</a></li>
+            <li><a href="/accounts/register">注册</a></li>
+            <li><a href="/admin">后台管理</a> </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+    {% block details %}{% endblock %}
+    </body>
+</html>

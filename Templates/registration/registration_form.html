@@ -1,0 +1,21 @@
+{% extends 'home_base.html' %}
+{% block details %}
+<div class="panel panel-default">
+    <div class="panel-body text-center">
+        <strong>注册BidDing web</strong>
+    </div>
+</div>
+<div class="container" align="center">
+    <div class="row">
+        <div class="col-md-12">
+            <form action='.' method='POST'>
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+                <input type="submit" value="注册" ><br/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

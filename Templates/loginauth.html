@@ -1,0 +1,27 @@
+{% extends 'home_base.html' %}
+{% load staticfiles %}
+{% block details %}
+<div class="panel panel-default">
+    <div class="panel-body text-center">
+        <strong>BidDing Web</strong>
+    </div>
+</div>
+{% if not username %}
+<div class="container">
+    <form class="form-horizontal" role="form" name="login" action="home/login/" method="POST">
+        {% csrf_token %}
+  <div class="form-group" align="center">
+    {{loginform.as_p}}
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10" align="center">
+      <button type="submit" class="btn btn-default">登录</button>
+    </div>
+  </div>
+     {% for msg in messages %}
+    <div class="alert alert-{{msg.tags}}">{{msg}}</div>
+     {% endfor %}
+</form>
+</div>
+{% endif %}
+{% endblock %}
