@@ -9,6 +9,7 @@ from django import forms
 from django.contrib import messages
 from froms import *
 from django.contrib import auth
+from django.http import HttpResponseRedirect
 # Create your views here.
 def ShowHomePage(request):
     template=get_template('homePage.html')
@@ -46,4 +47,38 @@ def Login(request):
                 username = None
                 messages.add_message(request, messages.WARNING, '请输入完整的账号和密码')
     html = template.render(locals(), request)
+    return HttpResponse(html)
+def Logout(request):
+    template=get_template('homePage.html')
+    auth.logout(request)
+    messages.add_message(request,messages.INFO,'成功注销了')
+    html=template.render(locals(),request)
+    return HttpResponse(html)
+def ShowUserHomePage(request):
+    if request.user.is_authenticated():
+        template=get_template('UserHomePage.html')
+        html=template.render(locals())
+    else:
+        return HttpResponseRedirect('/')
+    return HttpResponse(html)
+def ShowUserBiddingPage(request):
+    if request.user.is_authenticated():
+        template=get_template('UserBiddingPage.html')
+        html=template.render(locals())
+    else:
+        return HttpResponseRedirect('/')
+    return HttpResponse(html)
+def ShowUserSubmitPage(request):
+    if request.user.is_authenticated():
+        template=get_template('UserSubmitPage.html')
+        html=template.render(locals())
+    else:
+        return HttpResponseRedirect('/')
+    return HttpResponse(html)
+def ShowUserInfoPage(request):
+    if request.user.is_authenticated():
+        template=get_template('UserInfoPage.html')
+        html=template.render(locals())
+    else:
+        return HttpResponseRedirect('/')
     return HttpResponse(html)

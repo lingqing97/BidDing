@@ -17,10 +17,20 @@ from django.conf.urls import url
 from django.contrib import admin
 from mainpage.views import ShowHomePage
 from mainpage.views import Login
+from mainpage.views import Logout
+from mainpage.views import ShowUserHomePage
+from mainpage.views import ShowUserBiddingPage
+from mainpage.views import ShowUserSubmitPage
+from mainpage.views import ShowUserInfoPage
 from django.conf.urls import include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^$',ShowHomePage),
     url(r'^login/',Login),
+    url(r'^logout/',Logout),
+    url(r'userHome/',ShowUserHomePage),
+    url(r'bidding/',ShowUserBiddingPage),
+    url(r'submit/',ShowUserSubmitPage),
+    url(r'userInfo/',ShowUserInfoPage),
 ]
