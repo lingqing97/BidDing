@@ -1,4 +1,77 @@
 {% extends "UserPage_base.html" %}
 {% block details %}
-<h>test UserBiddingPage</h>
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-{{msg.tags}}" align="center">
+    {{msg}}
+</div>
+{% endfor %}
+{% endif %}
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+        </div>
+        <div class="col-md-4 column ">
+				<h2>
+                    <div style="text-align: center;">
+                    <font color="blue">Tasks</font>
+                    </div>
+				</h2>
+        </div>
+        <div class="col-md-4 column">
+        </div>
+	</div>
+</div>
+{% if tasks %}
+{% for task in tasks %}
+<div class="row clearfix">
+                <div class="col-md-4 column">
+				</div>
+				<div class="col-md-4 column">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<strong>pusher:</strong>{{task.pusher}}
+							</h3>
+						</div>
+						<div class="panel-body">
+							{{task.task|truncatechars:20}}
+						</div>
+						<div class="panel-footer">
+							<strong>price:</strong>{{task.pay}}<i>¥</i>
+						</div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">接单</button>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">接单</h4>
+                                    </div>
+                                <div class="modal-body">您确定接受价值为{{task.pay}}的任务?(确认后不可撤销)</div>
+                            <div class="modal-footer">
+                                <form action="/bidding/" method="POST" class="form-horizontal" role="form">
+                                {% csrf_token %}
+                                    <input type="hidden" name="pusher" value='{{task.pusher}}'>
+                                    <input type="hidden" name="task" value='{{task.task}}'>
+                                    <input type="hidden" name="date" value='{{task.date}}'>
+                                    <input type="hidden" name="pay" value='{{task.pay}}'>
+                                    <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-primary">确定</button>
+                                </div>
+                                </form>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                        </div>
+                        </div>
+					</div>
+				</div>
+                </div>
+				<div class="col-md-4 column">
+				</div>
+			</div>
+{% endfor %}
+{% endif %}
 {% endblock %}

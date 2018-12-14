@@ -18,6 +18,7 @@
 			</div>
 			{% if submitTask %}
             {% for task in submitTask reversed %}
+            <div class="span4">
 			<div class="row clearfix">
 				<div class="col-md-4 column">
 					<div class="panel panel-default">
@@ -39,10 +40,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 column">
-				</div>
-				<div class="col-md-4 column">
-				</div>
+			</div>
 			</div>
 			{% endfor %}
 			{% endif %}
@@ -62,7 +60,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								<strong>pusher:</strong>{{task.receiver}}
+								<strong>pusher:</strong>{{task.pusher}}
 							</h3>
 						</div>
 						<div class="panel-body">
@@ -72,10 +70,6 @@
 							<strong>price:</strong>{{task.pay}}<i>¥</i>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 column">
-				</div>
-				<div class="col-md-4 column">
 				</div>
 			</div>
 			{% endfor %}
