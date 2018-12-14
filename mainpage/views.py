@@ -10,6 +10,9 @@ from django.contrib import messages
 from froms import *
 from django.contrib import auth
 from django.http import HttpResponseRedirect
+from .models import UserInfo
+from .models import Task
+from django.contrib.auth.models import User
 # Create your views here.
 def ShowHomePage(request):
     template=get_template('homePage.html')
@@ -21,7 +24,8 @@ def Login(request):
     username = None
     if request.user.is_authenticated():
         user = request.user
-        # diaries = Diary.objects.filter(user=user)
+        submitTask=Task.objects.filter(pusher=user)
+        receiveTask=Task.objects.filter(receiver=request.user.username)
         messages.add_message(request,messages.INFO,"welcome %s"%request.user.username)
         template = get_template('UserHomePage.html')
         username = request.user.username
@@ -35,9 +39,10 @@ def Login(request):
                                              password=loginform.cleaned_data['password'], age=0, interest='',
                                              birthday='', phone='')
                 if username and username.is_active:
-                    # user = User.objects.filter(username=username)
-                    # diaries = Diary.objects.filter(user=user)
-                    messages.add_message(request, messages.INFO, "welcome %s" % request.user.username)
+                    user = User.objects.filter(username=username)
+                    submitTask = Task.objects.filter(pusher=user)
+                    receiveTask = Task.objects.filter(receiver=username)
+                    messages.add_message(request, messages.INFO, "welcome %s"%request.user.username)
                     template = get_template('UserHomePage.html')
                     auth.login(request, username)
                 else:
@@ -56,6 +61,10 @@ def Logout(request):
     return HttpResponse(html)
 def ShowUserHomePage(request):
     if request.user.is_authenticated():
+        username = request.user.username
+        user = request.user
+        submitTask=Task.objects.filter(pusher=user)
+        receiveTask=Task.objects.filter(receiver=request.user.username)
         template=get_template('UserHomePage.html')
         html=template.render(locals())
     else:
@@ -70,15 +79,47 @@ def ShowUserBiddingPage(request):
     return HttpResponse(html)
 def ShowUserSubmitPage(request):
     if request.user.is_authenticated():
-        template=get_template('UserSubmitPage.html')
-        html=template.render(locals())
+        template = get_template('UserSubmitPage.html')
+        if request.method=='GET':
+            newtask=NewTask()
+            html=template.render(locals(),request)
+        else:
+            user=request.user
+            task_form=Task(pusher=user)
+            newtask = NewTask(request.POST,instance=task_form)
+            if newtask.is_valid():
+                messages.add_message(request, messages.INFO,'提交成功')
+                newtask.save()
+                html=template.render(locals(),request)
+            else:
+                messages.add_message(request, messages.INFO, '提交失败')
+                html=template.render(locals(),request)
+        return HttpResponse(html)
     else:
         return HttpResponseRedirect('/')
-    return HttpResponse(html)
 def ShowUserInfoPage(request):
     if request.user.is_authenticated():
-        template=get_template('UserInfoPage.html')
-        html=template.render(locals())
+        username = User.objects.get(username=request.user.username).username
+        email = User.objects.get(username=request.user.username).email
+        if UserInfo.objects.filter(user=request.user).exists():
+            user = UserInfo.objects.get(user=request.user)
+        else:
+            user=None
+        if request.method=='GET':
+            newuser_info=userinfo()
+            template=get_template('UserInfoPage.html')
+            html=template.render(locals(),request)
+            return HttpResponse(html)
+        else:
+            newuser_info = userinfo(request.POST)
+            if newuser_info.is_valid():
+                messages.add_message(request, messages.INFO, '修改成功')
+                UserInfo.objects.filter(user=request.user).update(age=newuser_info.cleaned_data['age']\
+                    ,phone=newuser_info.cleaned_data['phone'],apartment=newuser_info.cleaned_data['apartment']\
+                    ,address=newuser_info.cleaned_data['address'],interest=newuser_info.cleaned_data['interest'])
+                return HttpResponseRedirect('/userInfo/')
+            else:
+                messages.add_message(request, messages.WARNING, '修改失败')
+                return HttpResponseRedirect('/userInfo/')
     else:
         return HttpResponseRedirect('/')
-    return HttpResponse(html)

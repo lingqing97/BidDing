@@ -5,27 +5,37 @@
     {{msg}}
 </div>
 {% endfor %}
+{% if username %}
+    <div class="alert alert-info" align="center">{{username}}的个人主页</div>
+{% endif %}
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="page-header">
 				<h1>
-					发布的任务 <small>history submit</small>
+					发布的任务 <small>submit history</small>
 				</h1>
 			</div>
+			{% if submitTask %}
+            {% for task in submitTask reversed %}
 			<div class="row clearfix">
 				<div class="col-md-4 column">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								Panel title
+								<strong>receiver:</strong>{{task.receiver}}
 							</h3>
 						</div>
 						<div class="panel-body">
-							Panel content
+							{{task.task|truncatechars:20}}
 						</div>
 						<div class="panel-footer">
-							Panel footer
+							<strong>status:</strong>
+							{% if task.status %}
+                            <font color="blue">已处理</font>
+							{% else %}
+							<font color="red">待接收</font>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -34,6 +44,8 @@
 				<div class="col-md-4 column">
 				</div>
 			</div>
+			{% endfor %}
+			{% endif %}
 		</div>
 	</div>
 	<div class="row clearfix">
@@ -43,19 +55,21 @@
 					接受的任务 <small>accept history</small>
 				</h1>
 			</div>
+			{% if receiveTask %}
+            {% for task in receiveTask reversed %}
 			<div class="row clearfix">
 				<div class="col-md-4 column">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								Panel title
+								<strong>pusher:</strong>{{task.receiver}}
 							</h3>
 						</div>
 						<div class="panel-body">
-							Panel content
+							{{task.task|truncatechars:20}}
 						</div>
 						<div class="panel-footer">
-							Panel footer
+							<strong>price:</strong>{{task.pay}}<i>¥</i>
 						</div>
 					</div>
 				</div>
@@ -64,6 +78,8 @@
 				<div class="col-md-4 column">
 				</div>
 			</div>
+			{% endfor %}
+			{% endif %}
 		</div>
 	</div>
 </div>
