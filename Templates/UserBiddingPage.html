@@ -35,11 +35,14 @@
 							</h3>
 						</div>
 						<div class="panel-body">
+                            <div class="row clearfix">
                             <div class="col-md-4">
-                               <img src="{{MEDIA_URL}}{{task.img}}">
+                                {% load static %}
+                               <img src="/static/img/{{task.img}}" height="150" width="150">
                             </div>
                             <div class="col-md-8">
 							{{task.task|truncatechars:20}}
+                            </div>
                             </div>
 						</div>
 						<div class="panel-footer">

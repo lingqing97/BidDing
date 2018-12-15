@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="26c97594-0ba2-49f8-a8b7-fc0f0352f22e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BidDing/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BidDing/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Templates/UserBiddingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/UserBiddingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/UserHomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/UserHomePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/UserPage_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/UserPage_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/UserSubmitPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/UserSubmitPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/home_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/home_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/froms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/froms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_A4k0G6d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_FdeJfxC.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_gpLoRzx.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_hJgyIgY.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_neepFsb.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timg_rOOCOCu.jpeg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +51,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BidDing/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="589">
               <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
               <folding>
                 <element signature="e#641#673#0" expanded="true" />
@@ -60,8 +63,8 @@
       <file leaf-file-name="UserBiddingPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Templates/UserBiddingPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state relative-caret-position="646">
+              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -90,7 +93,7 @@
       <file leaf-file-name="UserHomePage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/UserHomePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
+            <state relative-caret-position="-84">
               <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
             </state>
           </provider>
@@ -110,6 +113,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="589">
               <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BidDing/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="708">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
             </state>
           </provider>
         </entry>
@@ -138,7 +150,6 @@
         <option value="$PROJECT_DIR$/BidDing/urls.py" />
         <option value="$PROJECT_DIR$/Templates/UserInfoPage.html" />
         <option value="$PROJECT_DIR$/mainpage/admin.py" />
-        <option value="$PROJECT_DIR$/BidDing/settings.py" />
         <option value="$PROJECT_DIR$/mainpage/models.py" />
         <option value="$PROJECT_DIR$/static/FileInput.css" />
         <option value="$PROJECT_DIR$/Templates/UserSubmitPage.html" />
@@ -147,6 +158,7 @@
         <option value="$PROJECT_DIR$/mainpage/views.py" />
         <option value="$PROJECT_DIR$/Templates/UserHomePage.html" />
         <option value="$PROJECT_DIR$/mainpage/froms.py" />
+        <option value="$PROJECT_DIR$/BidDing/settings.py" />
         <option value="$PROJECT_DIR$/Templates/UserBiddingPage.html" />
       </list>
     </option>
@@ -539,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BidDing/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="54" column="48" lean-forward="true" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Templates/UserInfoPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="803">
@@ -554,9 +559,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/FileInput.css" />
+    <entry file="file://$PROJECT_DIR$/mainpage/froms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BidDing/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="589">
           <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding>
             <element signature="e#641#673#0" expanded="true" />
@@ -588,13 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainpage/froms.py">
+    <entry file="file://$PROJECT_DIR$/Templates/UserHomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-84">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -602,6 +614,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BidDing/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
         </state>
       </provider>
     </entry>
@@ -615,17 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/UserHomePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Templates/UserBiddingPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        <state relative-caret-position="646">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
