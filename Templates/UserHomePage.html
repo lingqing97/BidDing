@@ -18,30 +18,37 @@
 			</div>
 			{% if submitTask %}
             {% for task in submitTask reversed %}
-            <div class="span4">
-			<div class="row clearfix">
-				<div class="col-md-4 column">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								<strong>receiver:</strong>{{task.receiver}}
-							</h3>
-						</div>
-						<div class="panel-body">
-							{{task.task|truncatechars:20}}
-						</div>
-						<div class="panel-footer">
-							<strong>status:</strong>
+			<div class="panel panel-primary" style="width:30%;margin:10px 10px 10px 10px;float:left">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>receiver:</strong>{{task.receiver}}</h3>
+        </div>
+            <div class="panel-body" >
+                <button class="btn btn-small btn-lg" data-toggle="modal" data-target="#myModal{{forloop.counter}}" data-show="TU"
+                        style="background-color:#FFFFFF"> {{task.task|truncatechars:20}}</button>
+                    <div class="modal fade" id="myModal{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">{{task.date}}</h4>
+                                </div>
+                                <div class="modal-body">{{task.task|linebreaksbr}}</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                   </div>
+            </div>
+        <div class="panel-footer">
+           <strong>status:</strong>
 							{% if task.status %}
                             <font color="blue">已处理</font>
 							{% else %}
 							<font color="red">待接收</font>
 							{% endif %}
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
+        </div>
+    </div>
 			{% endfor %}
 			{% endif %}
 		</div>
@@ -55,23 +62,32 @@
 			</div>
 			{% if receiveTask %}
             {% for task in receiveTask reversed %}
-			<div class="row clearfix">
-				<div class="col-md-4 column">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								<strong>pusher:</strong>{{task.pusher}}
-							</h3>
-						</div>
-						<div class="panel-body">
-							{{task.task|truncatechars:20}}
-						</div>
-						<div class="panel-footer">
-							<strong>price:</strong>{{task.pay}}<i>¥</i>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class="panel panel-primary" style="width:30%;margin:10px 10px 10px 10px;float:left">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>pusher:</strong>{{task.pusher}}</h3>
+        </div>
+            <div class="panel-body" >
+                <button class="btn btn-small btn-lg" data-toggle="modal" data-target="#myModal{{forloop.counter}}" data-show="TU"
+                        style="background-color:#FFFFFF"> {{task.task|truncatechars:20}}</button>
+                    <div class="modal fade" id="myModal{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">{{task.date}}</h4>
+                                </div>
+                                <div class="modal-body">{{task.task|linebreaksbr}}</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                   </div>
+            </div>
+        <div class="panel-footer">
+            <strong>price:</strong>{{task.pay}}<i>¥</i>
+        </div>
+    </div>
 			{% endfor %}
 			{% endif %}
 		</div>

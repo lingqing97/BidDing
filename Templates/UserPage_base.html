@@ -11,6 +11,9 @@
     <style>h1,h2,h3,h4,h5,p,div{font-family:Arial;}</style>
     </head>
     <body>
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span4">
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -18,7 +21,7 @@
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/userHome">主页</a></li>
+            <li><a href="/userHome">主页</a></li>
             <li><a href="/userInfo">个人主页</a></li>
             <li><a href="/bidding">接收任务</a></li>
             <li><a href="/submit">发布任务</a></li>
@@ -27,6 +30,11 @@
     </div>
     </div>
 </nav>
+    </div>
+    <div class="span8">
     {% block details %}{% endblock %}
+    </div>
+    </div>
+    </div>
     </body>
 </html>

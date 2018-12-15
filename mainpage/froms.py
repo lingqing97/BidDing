@@ -19,7 +19,6 @@ class userinfo(forms.ModelForm):
         self.fields['apartment'].label='部门:'
         self.fields['address'].label='住址:'
         self.fields['interest'].label='兴趣:'
-
 class NewTask(forms.ModelForm):
     class Meta:
         model=Task

@@ -8,28 +8,17 @@
 {% endfor %}
 {% else %}
 <div>
-<form name="task" action="/submit/" method="POST">
+<form name="task" action="/submit/" method="POST"  enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="panel panel-default" style="width:50%;margin-left:9px" >
-    <div class="panel-heading">
+        <div class="col-md-4">
         <h3 class="panel-title">任务描述</h3>
-    </div>
-    <div class="panel-body">
         {{newtask.task}}
-    </div>
-    </div>
-    <div class="btn btn-default"  style="margin-left:9px">
-        <p>任务定价:</p>
-        {{newtask.pay}}
-    </div>
-    <div class="btn btn-default"  style="margin-left:9px">
-        <p>任务图片:</p>
-        {{newtask.img}}
-    </div>
-    <div>
-        <br>
-    <input type="submit" value="提交" name="save" class="btn btn-default" style="margin-left:9px">
-    </div>
+        <p>任务定价:{{newtask.pay}}</p>
+        <p>任务图片:{{newtask.img}}</p>
+        <input type="submit" value="提交" name="save" class="btn btn-default" style="margin-left:9px">
+        </div>
+        <div class="col-md-4">
+        </div>
 </form>
 </div>
 {% endif %}

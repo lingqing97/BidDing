@@ -83,9 +83,9 @@ def ShowUserBiddingPage(request):
     if request.user.is_authenticated():
         template = get_template('UserBiddingPage.html')
         username = request.user.username
+        user = request.user
+        tasks = Task.objects.exclude(pusher=user).filter(status=False)
         if request.method == 'GET':
-            user = request.user
-            tasks = Task.objects.exclude(pusher=user).filter(status=False)
             html = template.render(locals())
         else:
             pusher_name = request.POST.get('pusher')
@@ -115,8 +115,8 @@ def ShowUserSubmitPage(request):
             html = template.render(locals(), request)
         else:
             user = request.user
-            task_form = Task(pusher=user)
-            newtask = NewTask(request.POST, instance=task_form)
+            taskInit = Task(pusher=user)
+            newtask = NewTask(request.POST, request.FILES,instance=taskInit,initial={'receiver':'******','status':False})
             if newtask.is_valid():
                 messages.add_message(request, messages.INFO, '提交成功')
                 newtask.save()
