@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26c97594-0ba2-49f8-a8b7-fc0f0352f22e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BidDing/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BidDing/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/UserBiddingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/UserBiddingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_A4k0G6d.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_FdeJfxC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_gpLoRzx.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_hJgyIgY.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_neepFsb.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timg_rOOCOCu.jpeg" beforeDir="false" />
-    </list>
+    <list default="true" id="26c97594-0ba2-49f8-a8b7-fc0f0352f22e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +50,8 @@
       <file leaf-file-name="UserBiddingPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Templates/UserBiddingPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="342">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -636,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Templates/UserBiddingPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        <state relative-caret-position="342">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
